@@ -1,12 +1,10 @@
 <?php
-$TestTypeStr = '';
+$TestTypeStr = TestConfig::MEDIUM_LOAD_WITH_DB_STR;
+$DatabaseHostStr = 'localhost';
+$DatabaseUsernameStr = 'sdevbaseuser';
+$DatabasePasswordStr = '123';
+$DatabaseNameStr = 'sdevbase';
+$DatabasePortInt = null;
+$DatabaseServerCertPathStr = null; // JGL: This is entirely optional, but required when trying to connect to a database using SSL
 
-
-abstract class TestConfig {
-    const LIGHT_LOAD_STR = 'LIGHT_LOAD';
-    const MEDIUM_LOAD_STR = 'MEDIUM_LOAD';
-    const HEAVY_LOAD_STR = 'HEAVY_LOAD';
-
-    protected static $
-}
 ?>
