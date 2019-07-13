@@ -1,5 +1,5 @@
 <?php
-$TestTypeStr = TestConfig::MEDIUM_LOAD_WITH_DB_STR;
+$TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR;
 $DatabaseHostStr = 'localhost';
 $DatabaseUsernameStr = 'root';
 $DatabasePasswordStr = '';

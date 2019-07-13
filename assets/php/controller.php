@@ -22,23 +22,33 @@ abstract class TestConfig {
     }
 }
 abstract class OutputManager {
-    public static function setOutputFile() {
+    public static function setOutputFile($TestNameStr = null) {
         $CurrentTimeStamp = new DateTime();
+        if (is_null($TestNameStr)) {
+            $TestNameStr = 'UnnamedTests';
+        }
+        $TestDirectory = 'assets/outputs/'.$TestNameStr.'/';
+        if (!is_dir($TestDirectory)) {
+            mkdir($TestDirectory);
+        }
         $RequestPrepend = 'unknown_host';
         if (isset($_SERVER['REMOTE_ADDR'])) {
             $RequestPrepend = str_replace(".", "_", $_SERVER['REMOTE_ADDR']);
         }
-        $_SESSION["output_file"] = "assets/outputs/".$RequestPrepend."-".$CurrentTimeStamp->format('d-m-Y_H:i:s')."_".rand(1,1000).'.txt';
+        $_SESSION["output_file"] = "$TestDirectory".$RequestPrepend."-".$CurrentTimeStamp->format('d-m-Y_H:i:s')."_".rand(1,1000).'.txt';
     }
     public static function getOutputFile() {
         return $_SESSION["output_file"];
     }
-    public static function startTest() {
-        self::setOutputFile();
-        self::writeOutput("Starting test.",false,true);
+    public static function startTest($TestNameStr = null) {
+        self::setOutputFile($TestNameStr);
+        if (is_null($TestNameStr)) {
+            $TestNameStr = 'UnnamedTests';
+        }
+        self::writeOutput("Starting test: $TestNameStr",false,true);
         $_SESSION['start_time'] = microtime(true);
     }
-    public static function endTest($TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR) {
+    public static function endTest($TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR,$TestNameStr = null) {
         $ServerValueArray = [
             "SERVER_ADDR",
             "SERVER_PORT",
@@ -54,10 +64,13 @@ abstract class OutputManager {
                 $RequestInfoStr .= $item." => ".$_SERVER[$item]."\r\n";
             }
         }
+        if (is_null($TestNameStr)) {
+            $TestNameStr = 'UnnamedTests';
+        }
         $MaximumMemoryStr = round(memory_get_peak_usage()/1024/1024,2)."MB";
         $_SESSION['end_time'] = microtime(true);
         $DurationInSecondsFloat = round(($_SESSION['end_time'] - $_SESSION['start_time']),3);
-        self::writeOutput("Test finished. Summary:\r\nTest Type: $TestTypeStr\r\nTest Duration: $DurationInSecondsFloat s\r\nMaximum memory allocated: $MaximumMemoryStr\r\nRequest info: $RequestInfoStr\r\nTest detail:",true,false);
+        self::writeOutput("Test finished ($TestNameStr). Summary:\r\nTest Type: $TestTypeStr\r\nTest Duration: $DurationInSecondsFloat s\r\nMaximum memory allocated: $MaximumMemoryStr\r\nRequest info: $RequestInfoStr\r\nTest detail:",true,false);
     }
     public static function writeOutput($Message,$PrependMessageBool = false,$ClearExistingContentBool = false) {
         $ExistingContentStr = '';

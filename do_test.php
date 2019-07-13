@@ -7,14 +7,22 @@
  */
 session_start();
 require("assets/php/controller.php");
+if (isset($_GET['test_type'])) {
+    $TestTypeStr = $_GET['test_type'];
+}
 if (!isset($TestTypeStr)) {
     $TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR;
 }
-PerformanceTest::doTestInstance($TestTypeStr);
+$TestNameStr = null;
+if (isset($_GET['test_name'])) {
+    $TestNameStr = $_GET['test_name'];
+}
+PerformanceTest::doTestInstance($TestTypeStr,$TestNameStr);
 
 abstract class PerformanceTest {
-    public static function doTestInstance($TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR) {
-        OutputManager::startTest();
+    public static function doTestInstance($TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR,
+                                            $TestNameStr = null) {
+        OutputManager::startTest($TestNameStr);
         switch($TestTypeStr) {
             case TestConfig::LIGHT_LOAD_NO_DB_STR: self::doLightLoadNoDbTest();
                 break;
@@ -24,17 +32,17 @@ abstract class PerformanceTest {
                 for($i=0;$i<10;$i++){self::doLightLoadNoDbTest();}
                 break;
             case TestConfig::MEDIUM_LOAD_WITH_DB_STR:
-                for($i=0;$i<10;$i++){self::doLightLoadWithDbTest();}
+                for($i=0;$i<10;$i++){self::doLightLoadWithDbTest(100);}
                 break;
             case TestConfig::HEAVY_LOAD_NO_DB_STR:
                 for($i=0;$i<100;$i++){self::doLightLoadNoDbTest();}
                 break;
             case TestConfig::HEAVY_LOAD_WITH_DB_STR:
-                for($i=0;$i<100;$i++){self::doLightLoadWithDbTest();}
+                for($i=0;$i<10;$i++){self::doLightLoadWithDbTest(1000);}
                 break;
             default: self::doLightLoadNoDbTest();
         }
-        OutputManager::endTest($TestTypeStr);
+        OutputManager::endTest($TestTypeStr,$TestNameStr);
     }
     public static function doLightLoadNoDbTest() {
         for ($i=1;$i<=1000;$i++) {
@@ -44,20 +52,20 @@ abstract class PerformanceTest {
             OutputManager::writeOutput("Random calculation result: $Value1Int*$Value2Int=$ResultInt");
         }
     }
-    public static function doLightLoadWithDbTest() {
+    public static function doLightLoadWithDbTest($DbRowsToAdd = 10) {
         $DBLinkObj = TestConfig::connectDatabase();
         $CurrentTimeStamp = new DateTime();
         $TableNameStr = "phpperftest_".$CurrentTimeStamp->getTimestamp().'_'.rand(1,100000);
         $SqlStr = "
-CREATE TABLE IF NOT EXISTS $TableNameStr (
-    PerfomanceItemId INT AUTO_INCREMENT,
-    PerformanceData TEXT,
-    PRIMARY KEY (PerfomanceItemId)
-)  ENGINE=INNODB;";
+                CREATE TABLE IF NOT EXISTS $TableNameStr (
+                    PerfomanceItemId INT AUTO_INCREMENT,
+                    PerformanceData TEXT,
+                    PRIMARY KEY (PerfomanceItemId)
+                )  ENGINE=INNODB;";
         $DBLinkObj->query($SqlStr);
         OutputManager::writeOutput("Performance test table created: $TableNameStr");
 
-        for ($i=1;$i<=1000;$i++) {
+        for ($i=1;$i<=$DbRowsToAdd;$i++) {
             $RandomTextStr = md5(rand(0,100000));
             $SqlStr = "INSERT INTO `$TableNameStr` (`PerfomanceItemId`, `PerformanceData`) VALUES (NULL, '$RandomTextStr');";
             $DBLinkObj->query($SqlStr);
