@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS $TableNameStr (
         $DBLinkObj->query($SqlStr);
         OutputManager::writeOutput("Performance test table created: $TableNameStr");
 
-        for ($i=1;$i<=10000;$i++) {
+        for ($i=1;$i<=1000;$i++) {
             $RandomTextStr = md5(rand(0,100000));
             $SqlStr = "INSERT INTO `$TableNameStr` (`PerfomanceItemId`, `PerformanceData`) VALUES (NULL, '$RandomTextStr');";
             $DBLinkObj->query($SqlStr);

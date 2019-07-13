@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d78282d-36fe-426a-9ae7-bb6026fbd4b0" name="Default Changelist" comment="" />
+    <list default="true" id="6d78282d-36fe-426a-9ae7-bb6026fbd4b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/php/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/do_test.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +26,8 @@
           <entry key="js" value="4" />
           <entry key="json" value="5" />
           <entry key="map" value="9" />
-          <entry key="php" value="6" />
-          <entry key="txt" value="36" />
+          <entry key="php" value="11" />
+          <entry key="txt" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -33,8 +36,8 @@
           <entry key="HTML" value="4" />
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="6" />
-          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="PHP" value="11" />
+          <entry key="PLAIN_TEXT" value="83" />
           <entry key="SourceMap" value="9" />
         </counts>
       </usages-collector>
@@ -43,7 +46,7 @@
           <entry key="dummy" value="10" />
           <entry key="html" value="55" />
           <entry key="json" value="121" />
-          <entry key="php" value="3761" />
+          <entry key="php" value="3776" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
@@ -51,7 +54,7 @@
         <counts>
           <entry key="HTML" value="55" />
           <entry key="JSON" value="121" />
-          <entry key="PHP" value="3761" />
+          <entry key="PHP" value="3776" />
           <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
@@ -76,57 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/php/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#5#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/outputs/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-              <folding>
-                <element signature="n#html#0;n#!!top" expanded="true" />
-                <element signature="n#head#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/do_test.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="68" column="107" selection-start-line="68" selection-start-column="107" selection-end-line="68" selection-end-column="107" />
-              <folding>
-                <element signature="e#6#122#0#PHP" expanded="true" />
-                <element signature="n#doTestInstance#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-                <element signature="n#doLightLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-                <element signature="n#doMediumLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-                <element signature="n#doMediumLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-                <element signature="n#doHeavyLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-                <element signature="n#doHeavyLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -163,9 +120,10 @@
         <option value="$PROJECT_DIR$/assets/outputs/request_1563018499672.txt" />
         <option value="$PROJECT_DIR$/assets/php/db_config.php" />
         <option value="$PROJECT_DIR$/assets/php/controller.php" />
-        <option value="$PROJECT_DIR$/assets/php/config.php" />
-        <option value="$PROJECT_DIR$/do_test.php" />
         <option value="$PROJECT_DIR$/assets/outputs/index.html" />
+        <option value="$PROJECT_DIR$/do_test.php" />
+        <option value="&lt;ca93a524-c9d7-40fc-aea7-ff7de28a7615&gt;/server_test/assets/php/config.php" />
+        <option value="$PROJECT_DIR$/assets/php/config.php" />
       </list>
     </option>
   </component>
@@ -197,6 +155,23 @@
             <path>
               <item name="php-performance-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-performance-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-performance-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-performance-test" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-performance-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-performance-test" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="outputs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-performance-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-performance-test" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -247,25 +222,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563010651330</updated>
-      <workItem from="1563010655725" duration="8284000" />
+      <workItem from="1563010655725" duration="10718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8284000" />
+    <option name="totallyTimeSpent" value="10718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1622" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19493671" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22468354" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.32894737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -273,7 +249,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="right" id="Remote Host" visible="true" weight="0.32974684" />
+      <window_info anchor="right" id="Remote Host" weight="0.16708861" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -474,21 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/php/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="56" column="76" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="76" />
-          <folding>
-            <element signature="n#TestConfig#0;n#!!top" expanded="true" />
-            <element signature="n#connectDatabase#0;n#TestConfig#0;n#!!top" expanded="true" />
-            <element signature="n#setOutputFile#0;n#OutputManager#0;n#!!top" expanded="true" />
-            <element signature="n#getOutputFile#0;n#OutputManager#0;n#!!top" expanded="true" />
-            <element signature="n#startTest#0;n#OutputManager#0;n#!!top" expanded="true" />
-            <element signature="n#writeOutput#0;n#OutputManager#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/outputs/::1-13-07-2019_14:25:56_288.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -497,32 +458,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/outputs/::1-13-07-2019_14:27:23_846.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/do_test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="68" column="107" selection-start-line="68" selection-start-column="107" selection-end-line="68" selection-end-column="107" />
-          <folding>
-            <element signature="e#6#122#0#PHP" expanded="true" />
-            <element signature="n#doTestInstance#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-            <element signature="n#doLightLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-            <element signature="n#doMediumLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-            <element signature="n#doMediumLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-            <element signature="n#doHeavyLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-            <element signature="n#doHeavyLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/php/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -542,6 +477,44 @@
             <element signature="n#html#0;n#!!top" expanded="true" />
             <element signature="n#head#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/do_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="e#6#122#0#PHP" expanded="true" />
+            <element signature="n#doTestInstance#0;n#PerformanceTest#0;n#!!top" expanded="true" />
+            <element signature="n#doLightLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
+            <element signature="n#doMediumLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
+            <element signature="n#doMediumLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
+            <element signature="n#doHeavyLoadNoDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
+            <element signature="n#doHeavyLoadWithDbTest#0;n#PerformanceTest#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/php/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="56" column="76" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="76" />
+          <folding>
+            <element signature="n#TestConfig#0;n#!!top" expanded="true" />
+            <element signature="n#connectDatabase#0;n#TestConfig#0;n#!!top" expanded="true" />
+            <element signature="n#setOutputFile#0;n#OutputManager#0;n#!!top" expanded="true" />
+            <element signature="n#getOutputFile#0;n#OutputManager#0;n#!!top" expanded="true" />
+            <element signature="n#startTest#0;n#OutputManager#0;n#!!top" expanded="true" />
+            <element signature="n#writeOutput#0;n#OutputManager#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/php/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
