@@ -70,7 +70,8 @@ abstract class OutputManager {
         $MaximumMemoryStr = round(memory_get_peak_usage()/1024/1024,2)."MB";
         $_SESSION['end_time'] = microtime(true);
         $DurationInSecondsFloat = round(($_SESSION['end_time'] - $_SESSION['start_time']),3);
-        self::writeOutput("Test finished ($TestNameStr). Summary:\r\nTest Type: $TestTypeStr\r\nTest Duration: $DurationInSecondsFloat s\r\nMaximum memory allocated: $MaximumMemoryStr\r\nRequest info: $RequestInfoStr\r\nTest detail:",true,false);
+        self::writeOutput("Test finished ($TestNameStr). Summary:\r\nTest Type: $TestTypeStr\r\nTest Duration: $DurationInSecondsFloat s\r\nMaximum memory allocated: $MaximumMemoryStr\r\nRequest info:\r\n$RequestInfoStr\r\nTest detail:",true,false);
+        echo file_get_contents(self::getOutputFile());
     }
     public static function writeOutput($Message,$PrependMessageBool = false,$ClearExistingContentBool = false) {
         $ExistingContentStr = '';

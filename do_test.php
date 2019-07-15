@@ -6,6 +6,7 @@
  * Time: 10:07 AM
  */
 session_start();
+header("Content-Type: text/plain");
 require("assets/php/controller.php");
 if (isset($_GET['test_type'])) {
     $TestTypeStr = $_GET['test_type'];
@@ -29,13 +30,13 @@ abstract class PerformanceTest {
             case TestConfig::LIGHT_LOAD_WITH_DB_STR: self::doLightLoadWithDbTest();
                 break;
             case TestConfig::MEDIUM_LOAD_NO_DB_STR:
-                for($i=0;$i<10;$i++){self::doLightLoadNoDbTest();}
+                for($i=0;$i<5;$i++){self::doLightLoadNoDbTest();}
                 break;
             case TestConfig::MEDIUM_LOAD_WITH_DB_STR:
                 for($i=0;$i<10;$i++){self::doLightLoadWithDbTest(100);}
                 break;
             case TestConfig::HEAVY_LOAD_NO_DB_STR:
-                for($i=0;$i<100;$i++){self::doLightLoadNoDbTest();}
+                for($i=0;$i<15;$i++){self::doLightLoadNoDbTest();}
                 break;
             case TestConfig::HEAVY_LOAD_WITH_DB_STR:
                 for($i=0;$i<10;$i++){self::doLightLoadWithDbTest(1000);}
