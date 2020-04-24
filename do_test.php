@@ -21,6 +21,8 @@ if (isset($_GET['test_name'])) {
 PerformanceTest::doTestInstance($TestTypeStr,$TestNameStr);
 
 abstract class PerformanceTest {
+    protected static $ConnectionCount = 0;
+    protected static $ConnectionTotalDelay = 0;
     public static function doTestInstance($TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR,
                                             $TestNameStr = null) {
         OutputManager::startTest($TestNameStr);
@@ -43,6 +45,8 @@ abstract class PerformanceTest {
                 break;
             default: self::doLightLoadNoDbTest();
         }
+        $ConnectionDelayAverage = round(self::$ConnectionTotalDelay / self::$ConnectionCount,3);
+        OutputManager::writeOutput("Database connection delay average: $ConnectionDelayAverage s");
         OutputManager::endTest($TestTypeStr,$TestNameStr);
     }
     public static function doLightLoadNoDbTest() {
@@ -54,7 +58,12 @@ abstract class PerformanceTest {
         }
     }
     public static function doLightLoadWithDbTest($DbRowsToAdd = 10) {
+        $ConnectStartTime = microtime(true);
         $DBLinkObj = TestConfig::connectDatabase();
+        $ConnectEndTime = microtime(true);
+        $DurationInSecondsFloat = round(($ConnectEndTime - $ConnectStartTime),3);
+        self::$ConnectionCount++;
+        self::$ConnectionTotalDelay += $DurationInSecondsFloat;
         $CurrentTimeStamp = new DateTime();
         $TableNameStr = "phpperftest_".$CurrentTimeStamp->getTimestamp().'_'.rand(1,100000);
         $SqlStr = "

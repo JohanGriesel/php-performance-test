@@ -1,0 +1,48 @@
+24-04-2020 09:52:38: Test finished (UnnamedTests). Summary:
+Test Type: MEDIUM_LOAD_WITH_DB
+Test Duration: 22.454 s
+Maximum memory allocated: 0.57MB
+Request info:
+SERVER_ADDR => ::1
+SERVER_PORT => 80
+REMOTE_ADDR => ::1
+HTTP_HOST => localhost
+HTTP_USER_AGENT => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36
+REQUEST_METHOD => GET
+QUERY_STRING => 
+REQUEST_URI => /Personal_Projects/php-performance-test/do_test.php
+
+Test detail:
+
+24-04-2020 09:52:15: Starting test: UnnamedTests
+24-04-2020 09:52:16: Performance test table created: phpperftest_1587714735_58865
+24-04-2020 09:52:18: 100 items added and returned 0.57MB
+24-04-2020 09:52:18: Table phpperftest_1587714735_58865 dropped
+24-04-2020 09:52:18: Performance test table created: phpperftest_1587714738_11581
+24-04-2020 09:52:20: 100 items added and returned 0.57MB
+24-04-2020 09:52:20: Table phpperftest_1587714738_11581 dropped
+24-04-2020 09:52:20: Performance test table created: phpperftest_1587714740_42983
+24-04-2020 09:52:22: 100 items added and returned 0.57MB
+24-04-2020 09:52:22: Table phpperftest_1587714740_42983 dropped
+24-04-2020 09:52:22: Performance test table created: phpperftest_1587714742_98322
+24-04-2020 09:52:25: 100 items added and returned 0.57MB
+24-04-2020 09:52:25: Table phpperftest_1587714742_98322 dropped
+24-04-2020 09:52:25: Performance test table created: phpperftest_1587714745_88860
+24-04-2020 09:52:27: 100 items added and returned 0.57MB
+24-04-2020 09:52:27: Table phpperftest_1587714745_88860 dropped
+24-04-2020 09:52:27: Performance test table created: phpperftest_1587714747_50623
+24-04-2020 09:52:29: 100 items added and returned 0.57MB
+24-04-2020 09:52:29: Table phpperftest_1587714747_50623 dropped
+24-04-2020 09:52:29: Performance test table created: phpperftest_1587714749_76528
+24-04-2020 09:52:31: 100 items added and returned 0.57MB
+24-04-2020 09:52:31: Table phpperftest_1587714749_76528 dropped
+24-04-2020 09:52:32: Performance test table created: phpperftest_1587714751_4953
+24-04-2020 09:52:34: 100 items added and returned 0.57MB
+24-04-2020 09:52:34: Table phpperftest_1587714751_4953 dropped
+24-04-2020 09:52:34: Performance test table created: phpperftest_1587714754_34798
+24-04-2020 09:52:36: 100 items added and returned 0.57MB
+24-04-2020 09:52:36: Table phpperftest_1587714754_34798 dropped
+24-04-2020 09:52:36: Performance test table created: phpperftest_1587714756_48027
+24-04-2020 09:52:38: 100 items added and returned 0.57MB
+24-04-2020 09:52:38: Table phpperftest_1587714756_48027 dropped
+24-04-2020 09:52:38: Database connection delay average: 0.033 s
