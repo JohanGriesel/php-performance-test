@@ -16,3 +16,16 @@ while ($row = mysqli_fetch_assoc($ResultObj)) {
     echo $row['Variable_name'].':'.$row['Value']."\r\n";
 }
 $DBLinkObj->close();
+
+
+
+
+
+
+
+
+
+
+
+
+

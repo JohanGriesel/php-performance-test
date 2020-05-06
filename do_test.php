@@ -18,13 +18,14 @@ $TestNameStr = null;
 if (isset($_GET['test_name'])) {
     $TestNameStr = $_GET['test_name'];
 }
-PerformanceTest::doTestInstance($TestTypeStr,$TestNameStr);
+//PerformanceTest::doTestInstance($TestTypeStr,$TestNameStr);
+PerformanceTest::testConnection();
 
 abstract class PerformanceTest {
     protected static $ConnectionCount = 0;
     protected static $ConnectionTotalDelay = 0;
     public static function doTestInstance($TestTypeStr = TestConfig::LIGHT_LOAD_NO_DB_STR,
-                                            $TestNameStr = null) {
+                                          $TestNameStr = null) {
         OutputManager::startTest($TestNameStr);
         switch($TestTypeStr) {
             case TestConfig::LIGHT_LOAD_NO_DB_STR: self::doLightLoadNoDbTest();
@@ -74,7 +75,7 @@ abstract class PerformanceTest {
                 )  ENGINE=INNODB;";
         $DBLinkObj->query($SqlStr);
         OutputManager::writeOutput("Performance test table created: $TableNameStr");
-
+        
         for ($i=1;$i<=$DbRowsToAdd;$i++) {
             $RandomTextStr = md5(rand(0,100000));
             $SqlStr = "INSERT INTO `$TableNameStr` (`PerfomanceItemId`, `PerformanceData`) VALUES (NULL, '$RandomTextStr');";
@@ -92,15 +93,32 @@ abstract class PerformanceTest {
         $DBLinkObj->close();
     }
     public static function doMediumLoadNoDbTest() {
-
+    
     }
     public static function doMediumLoadWithDbTest() {
-
+    
     }
     public static function doHeavyLoadNoDbTest() {
-
+    
     }
     public static function doHeavyLoadWithDbTest() {
-
+    
+    }
+    
+    public static function testConnection() {
+        OutputManager::startTest("Testing connection for ".TestConfig::getDataBaseServer());
+        $TotalDuration = 0;
+        for($i=0;$i<10;$i++) {
+            $ConnectStartTime = microtime(true);
+            $DBLinkObj = TestConfig::connectDatabase();
+            $ConnectEndTime = microtime(true);
+            //$DBLinkObj->close();
+            $DurationInSecondsFloat = round(($ConnectEndTime - $ConnectStartTime),3);
+            $TotalDuration += $DurationInSecondsFloat;
+            OutputManager::writeOutput("Time to connect to DB server: $DurationInSecondsFloat s");
+        }
+        $AverageConnectionTime = round($TotalDuration / 10,3);
+        OutputManager::writeOutput("Average time to connect to DB server: $AverageConnectionTime s");
+        OutputManager::endTest("Connection Test");
     }
 }

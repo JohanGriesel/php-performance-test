@@ -20,6 +20,10 @@ abstract class TestConfig {
         }
         return $LinkObj;
     }
+    public static function getDataBaseServer() {
+        global $DatabaseHostStr;
+        return $DatabaseHostStr;
+    }
 }
 abstract class OutputManager {
     public static function setOutputFile($TestNameStr = null) {
