@@ -2,7 +2,7 @@
 $TestTypeStr = TestConfig::MEDIUM_LOAD_WITH_DB_STR;
 
 // Azure
-$DatabaseHostStr = 'mobility-mysql-server-1.mysql.database.azure.com';
+$DatabaseHostStr = 'p:mobility-mysql-server-1.mysql.database.azure.com';
 $DatabaseUsernameStr = 'perftest@mobility-mysql-server-1';
 $DatabasePasswordStr = '123';
 $DatabaseNameStr = 'perftest';
